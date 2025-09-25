@@ -1,0 +1,58 @@
+
+:root{
+  --bg:#ffffff;--text:#0f172a;--muted:#475569;--primary:#0ea5e9;--card:#f1f5f9;--border:#e2e8f0;--accent:#f59e0b;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0b1220;--text:#e6eefc;--muted:#9fb3c8;--primary:#2ec3ff;--card:#0f182b;--border:#1f2a44;--accent:#fbbf24}
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1150px;margin:0 auto;padding:0 1.2rem}
+.site-header{position:sticky;top:0;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.6));backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
+@media (prefers-color-scheme: dark){.site-header{background:linear-gradient(180deg,rgba(11,18,32,.9),rgba(11,18,32,.6))}}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:.8rem;color:inherit;text-decoration:none}
+.logo{width:40px;height:40px;border-radius:10px;object-fit:cover;border:1px solid var(--border)}
+.brand-text strong{display:block;font-size:1.05rem;letter-spacing:.02em}
+.brand-text small{display:block;color:var(--muted)}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.nav a:hover{color:var(--text)}
+.menu{display:none;border:1px solid var(--border);background:transparent;border-radius:10px;padding:.5rem .7rem;color:var(--text)}
+@media (max-width:900px){.nav{display:none}.menu{display:block}}
+.hero{padding:5rem 0;background:radial-gradient(80% 100% at 10% 10%,rgba(14,165,233,.12),transparent 60%),radial-gradient(60% 80% at 90% 10%,rgba(245,158,11,.10),transparent 60%)}
+.hero-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;align-items:start}
+@media (max-width:1000px){.hero-grid{grid-template-columns:1fr}}
+.lead{font-size:1.1rem;color:var(--muted)}
+.cta{display:flex;gap:.8rem;margin:1rem 0 1.2rem}
+.btn{display:inline-block;padding:.75rem 1rem;border-radius:12px;font-weight:700;text-decoration:none;border:1px solid var(--border)}
+.btn.primary{background:linear-gradient(135deg,var(--primary),#0284c7);color:white;border-color:transparent}
+.btn.ghost{background:transparent;color:var(--text)}
+.btn.small{padding:.5rem .7rem}
+.highlights{display:flex;flex-wrap:wrap;gap:.6rem 1rem;padding:0;margin:1rem 0 0}
+.highlights li{list-style:none;color:var(--muted);font-weight:600}
+.section{padding:3.2rem 0}
+.section.alt{background:linear-gradient(180deg,rgba(14,165,233,.06),transparent)}
+.cards{display:grid;gap:1rem}
+.cards.services{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1100px){.cards.services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:680px){.cards.services{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.1rem}
+.card h3{margin-top:0}
+.bullets{padding-left:1.1rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:950px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:580px){.grid-3{grid-template-columns:1fr}}
+.gallery .ph{aspect-ratio:4/3;border-radius:14px;background:repeating-conic-gradient(from 0deg,#e2e8f0 0 10deg,#f1f5f9 10deg 20deg);border:1px solid var(--border)}
+.muted{color:var(--muted)}
+.steps{counter-reset: step;display:grid;gap:.8rem}
+.steps li{list-style:none;position:relative;padding-left:2.2rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:.9rem 1rem .9rem 2.8rem}
+.steps li:before{counter-increment: step;content: counter(step);position:absolute;left:.9rem;top:.7rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:#1f2937;font-weight:800;display:grid;place-items:center}
+.check{list-style:'✔  ';padding-left:1.2rem}
+.form label{display:block;margin:.6rem 0}
+.form input,.form textarea{width:100%;padding:.7rem;border-radius:12px;border:1px solid var(--border);background:white;color:#0f172a}
+@media (prefers-color-scheme: dark){.form input,.form textarea{background:#0b1220;color:#e6eefc}}
+.contact-list{padding-left:1.1rem}
+.site-footer{border-top:1px solid var(--border);padding:1.2rem 0;color:var(--muted);text-align:center}
